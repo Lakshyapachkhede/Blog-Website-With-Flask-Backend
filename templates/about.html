@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<div class="content max-width-1 m-auto">
+    <div class="content-left font2">
+      <h1>About MeBlog</h1>
+      <p>
+
+        Welcome to MeBlog your go-to destination for the latest in technology trends and innovations. From cutting-edge gadgets to breakthrough developments, we're here to decode the complex world of tech and make it accessible to all.
+      </p>
+      <br>
+      <p>
+        Join us on a journey through the digital landscape, where bytes meet brilliance and innovation knows no bounds. Explore in-depth analyses, expert interviews, and hands-on reviews, all designed to empower you with the knowledge to navigate the ever-evolving tech sphere. Whether you're a seasoned enthusiast or a curious beginner, TechWise Insights is your beacon in the digital age.
+      </p>
+    </div>
+    <div class="content-right">
+      <img src="{{ url_for('static', filename='img/home.svg') }}" alt="iBlog" />
+    </div>
+  </div>
+
+  {% endblock body %}

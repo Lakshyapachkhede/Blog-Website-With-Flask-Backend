@@ -1,0 +1,52 @@
+{% extends "layout.html" %} {% block body %}
+<!--Fetch post from database use slug-->
+<div class="post-img">
+  {% set file = 'img/' + post.image%}
+  <img src="{{ url_for('static', filename=file) }}" alt="Post-img" />
+</div>
+<div class="blog-post-content m-auto my-2 font1">
+  <h1>{{post.title}}</h1>
+  <div class="blogpost-meta">
+    <div class="author-info">
+      <div>{{post.author}}</div>
+      <div>{{post.date}} | {{post.readtime}} min read</div>
+    </div>
+    <div class="social">
+      <img src="{{ url_for('static', filename='img/face.png') }}" alt="" />
+      <img src="{{ url_for('static', filename='img/twi.png') }}" alt="" />
+      <img src="{{ url_for('static', filename='img/email.png') }}" alt="" />
+    </div>
+  </div>
+  <p class="font1">{{post.content}}</p>
+</div>
+
+<hr class="m-auto max-width-1" />
+
+<div class="home-articles max-width-1 m-auto font2">
+  <h2 class="heading-large">People who read this also read this</h2>
+  <div class="row">
+    <!--Fetch post from database use slug-->
+
+    {% for post in posts %}
+    <div class="home-article-vertical">
+      <div class="home-article-image">
+        {% set file = 'img/' + post.image%}
+        <img
+          src="{{ url_for('static', filename=file) }}"
+          alt="article"
+        />
+      </div>
+      <div class="home-article-vertical-content">
+        <a href="/blogpost"><h3>{{post.title}}</h3></a>
+        <div></div>
+        <span>{{post.author}} | {{post.readtime}} min read</span>
+      </div>
+    </div>
+    {% endfor %}
+
+    
+
+  </div>
+</div>
+
+{% endblock body %}

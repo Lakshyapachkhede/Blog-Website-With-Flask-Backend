@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font2);
+}
+
+*::selection {
+  background-color: var(--main-bg-color);
+  color: white;
+}
+
+.navigation {
+  font-family: var(--font1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 10px;
+  /* background-color: red; */
+}
+
+.nav-left {
+  font-weight: bolder;
+  display: flex;
+}
+
+.nav-left span {
+  font-size: 35px;
+  padding-top: 5px;
+}
+
+.nav-left ul {
+  display: flex;
+  align-items: center;
+  margin: 0 77px;
+  font-size: 22px;
+  font-weight: normal;
+}
+.nav-left ul li {
+  font-family: var(--font2);
+  list-style: none;
+  margin: 0 14px;
+}
+.nav-left ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-left ul li a:hover {
+  color: var(--main-bg-color);
+  font-weight: bold;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  /* background-color: rgb(248, 248, 248); */
+  padding: 9px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  position: relative;
+}
+.content::after {
+  content: "";
+  background-image: url(../img/11.svg);
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  opacity: 0.15;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+.content-left {
+  font-family: var(--font1);
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content-left p {
+  padding-right: 10px;
+}
+
+.content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-right img {
+  width: 355px;
+  border-radius: 200px;
+  border: 2px solid black;
+}
+
+
+.home-articles {
+  position: relative;
+  /* background-color: rgb(255, 251, 247); */
+}
+
+
+
+.home-article {
+  /* background-color: rgb(248, 246, 246); */
+  display: flex;
+  margin: 25px;
+  border-radius: 10px;
+
+}
+
+.home-article img {
+  width: 250px;
+  border-radius: 10px 0 0 10px ;
+}
+
+.home-article-content {
+  align-self: center;
+  padding: 20px;
+}
+.home-article-content a {
+  text-decoration: none;
+  color: black;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  height: 50px;
+  background-color: var(--main-bg-color);
+}
+
+
