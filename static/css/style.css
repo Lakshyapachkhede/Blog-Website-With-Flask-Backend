@@ -107,13 +107,14 @@
   /* background-color: rgb(248, 246, 246); */
   display: flex;
   margin: 25px;
-  border-radius: 10px;
+
 
 }
 
 .home-article img {
-  width: 250px;
-  border-radius: 10px 0 0 10px ;
+  width: 300px;
+  /* height: 200px; */
+  border-radius: 10px;
 }
 
 .home-article-content {

@@ -82,3 +82,16 @@
 .t-center{
   text-align: center;
 }
+
+.page-no{
+  margin: 20px;
+}
+
+.page-no a {
+  text-decoration: none;
+}
+
+.active-page-btn{
+  background-color: var(--main-bg-color);
+  color: white;
+}

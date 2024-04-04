@@ -4,11 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Blog Template</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/utlis.css')  }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')  }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/blogPost.css')  }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css')  }}" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css')  }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/utlis.css')  }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/blogPost.css')  }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/contact.css')  }}"
+    />
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css')  }}"
+  />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css')  }}"
+    />
 
   </head>
   <body>
@@ -23,16 +39,22 @@
       </div>
       <div class="nav-right">
         <form action="/search" method="post">
-        <input class="form-input" type="text" name="query" placeholder="Article Search" />
-        <button class="btn" type="submit">Search</button>
-      </form>
+          <input
+            class="form-input"
+            type="text"
+            name="query"
+            placeholder="Article Search"
+          />
+          <button class="btn" type="submit">Search</button>
+        </form>
       </div>
     </nav>
     <hr class="my-2 max-width-1" />
-{% block body %} {% endblock body %} 
-
+    {% block body %} {% endblock body %}
+<footer>
     <div class="footer m-auto">
-        <div>Copyright &copy; MeBlog</div>
-      </div>
-    </body>
-  </html>
+      <div>Copyright &copy; MeBlog</div>
+    </div>
+  </body>
+</footer>
+</html>

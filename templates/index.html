@@ -30,8 +30,8 @@
 </div>
 <div class="home-articles max-width-1 m-auto font2">
   <!--Fetch Posts from database using for loop-->
-  
-  {% for post in posts %}
+
+  {% for post in posts.items %}
   <div class="home-article">
     <div class="home-article-image">
       {% set file = 'img/' + post.image %}
@@ -44,6 +44,21 @@
     </div>
   </div>
   {% endfor %}
-  
+  <div class="page-no t-center">
+ {% for page_num in posts.iter_pages() %} {% if page_num %}
+
+      {% if page_num == posts.page %}
+      <a class="btn page-btn active-page-btn" href="{{url_for('home', page=page_num)}}">{{page_num}}</a>
+      {% else %}
+      <a
+      class="btn page-btn"
+      href="{{url_for('home', page=page_num)}}"
+      >{{page_num}}</a
+    >
+      {% endif %}
+
+    {% else %} ... {% endif %} {% endfor %}
+  </div>
+</div>
 </div>
 {% endblock body %}

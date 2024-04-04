@@ -3,55 +3,22 @@
 <div class="t-center">
   <h2 class="heading-large">Search Result for {{query}}</h2>
 </div>
-<div class="home-articles max-width-1 m-auto font2">
+<div class="home-articles max-width-1 m-auto font2" style="height: 100vh;">
   <!--Fetch Posts from database using for loop-->
-
+  {% for post in posts %}
   <div class="home-article">
     <div class="home-article-image">
-      <img src="{{ url_for('static', filename='img/1.png') }}" alt="article" />
+      {% set file = 'img/' + post.image%}
+      <img src="{{ url_for('static', filename=file) }}" alt="article" />
     </div>
     <div class="home-article-content">
-      <a href="/blogpost"> <h3>Learn to type 150 words in a minute</h3></a>
-      <div>Lakshya Pachkhede</div>
-      <span>2 April | 6 min read</span>
+      <a href="/blogpost/{{post.slug}}"> <h3>{{post.title}}</h3></a>
+      <div>{{post.author}}</div>
+      <span>{{post.date}} | {{post.readtime}} min read</span>
     </div>
   </div>
+  {% endfor %}
 
-  <div class="home-article">
-    <div class="home-article-image">
-      <img src="{{ url_for('static', filename='img/2.png') }}" alt="article" />
-    </div>
-    <div class="home-article-content">
-      <a href="/blogpost"> <h3>How to connect with peoples</h3></a>
-
-      <div>Yash Panchkhede</div>
-      <span>1 April | 5 min read</span>
-    </div>
-  </div>
-
-  <div class="home-article">
-    <div class="home-article-image">
-      <img src="{{ url_for('static', filename='img/3.png') }}" alt="article" />
-    </div>
-    <div class="home-article-content">
-      <a href="/blogpost"><h3>Make Your Life Beautiful</h3></a>
-      <div>Eshika Vishwkarma</div>
-      <span>3 April | 2 min read</span>
-    </div>
-  </div>
-
-  <div class="home-article">
-    <div class="home-article-image">
-      <img src="{{ url_for('static', filename='img/4.png') }}" alt="article" />
-    </div>
-    <div class="home-article-content">
-      <a href="/blogpost"
-        ><h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3></a
-      >
-      <div>Author Name</div>
-      <span>1 April | 6 min read</span>
-    </div>
-  </div>
 
 </div>
 {% endblock body %}

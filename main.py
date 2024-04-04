@@ -33,7 +33,8 @@ class Posts(db.Model):
 
 @app.route('/')
 def home():
-    posts  = Posts.query.filter_by().all()
+    page = request.args.get('page', 1, type=int)
+    posts  = Posts.query.paginate(page=page, per_page=2)
     return render_template("index.html", posts=posts)
 
 
@@ -58,8 +59,9 @@ def blogpost(slug):
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     query = request.form.get('query')
-    
-    return render_template('search.html', query=query)
+    posts = Posts.query.filter_by().all()
+    posts = [post for post in posts if query.lower() in post.title.lower()]
+    return render_template('search.html', query=query, posts=posts)
 
 
 
